@@ -18,47 +18,35 @@ namespace TencentCloud\Cdwpg\V20201230\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 集群节点信息
+ * Range范围
  *
- * @method string getSpecName() 获取1
+ * @method string getMin() 获取最小值
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setSpecName(string $SpecName) 设置1
+ * @method void setMin(string $Min) 设置最小值
 注意：此字段可能返回 null，表示取不到有效值。
- * @method DiskSpecPlus getDataDisk() 获取1
+ * @method string getMax() 获取最大值
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setDataDisk(DiskSpecPlus $DataDisk) 设置1
-注意：此字段可能返回 null，表示取不到有效值。
- * @method integer getCvmCount() 获取1
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setCvmCount(integer $CvmCount) 设置1
+ * @method void setMax(string $Max) 设置最大值
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class InstanceNodeGroup extends AbstractModel
+class Range extends AbstractModel
 {
     /**
-     * @var string 1
+     * @var string 最小值
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $SpecName;
+    public $Min;
 
     /**
-     * @var DiskSpecPlus 1
+     * @var string 最大值
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $DataDisk;
+    public $Max;
 
     /**
-     * @var integer 1
+     * @param string $Min 最小值
 注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $CvmCount;
-
-    /**
-     * @param string $SpecName 1
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param DiskSpecPlus $DataDisk 1
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param integer $CvmCount 1
+     * @param string $Max 最大值
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -74,17 +62,12 @@ class InstanceNodeGroup extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("SpecName",$param) and $param["SpecName"] !== null) {
-            $this->SpecName = $param["SpecName"];
+        if (array_key_exists("Min",$param) and $param["Min"] !== null) {
+            $this->Min = $param["Min"];
         }
 
-        if (array_key_exists("DataDisk",$param) and $param["DataDisk"] !== null) {
-            $this->DataDisk = new DiskSpecPlus();
-            $this->DataDisk->deserialize($param["DataDisk"]);
-        }
-
-        if (array_key_exists("CvmCount",$param) and $param["CvmCount"] !== null) {
-            $this->CvmCount = $param["CvmCount"];
+        if (array_key_exists("Max",$param) and $param["Max"] !== null) {
+            $this->Max = $param["Max"];
         }
     }
 }

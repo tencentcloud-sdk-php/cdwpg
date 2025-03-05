@@ -18,47 +18,59 @@ namespace TencentCloud\Cdwpg\V20201230\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 集群节点信息
+ * 错误日志详细信息
  *
- * @method string getSpecName() 获取1
+ * @method string getUserName() 获取用户名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setSpecName(string $SpecName) 设置1
+ * @method void setUserName(string $UserName) 设置用户名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method DiskSpecPlus getDataDisk() 获取1
+ * @method string getDatabase() 获取数据库
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setDataDisk(DiskSpecPlus $DataDisk) 设置1
+ * @method void setDatabase(string $Database) 设置数据库
 注意：此字段可能返回 null，表示取不到有效值。
- * @method integer getCvmCount() 获取1
+ * @method string getErrorTime() 获取报错时间
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setCvmCount(integer $CvmCount) 设置1
+ * @method void setErrorTime(string $ErrorTime) 设置报错时间
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method string getErrorMessage() 获取报错信息
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setErrorMessage(string $ErrorMessage) 设置报错信息
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class InstanceNodeGroup extends AbstractModel
+class ErrorLogDetail extends AbstractModel
 {
     /**
-     * @var string 1
+     * @var string 用户名称
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $SpecName;
+    public $UserName;
 
     /**
-     * @var DiskSpecPlus 1
+     * @var string 数据库
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $DataDisk;
+    public $Database;
 
     /**
-     * @var integer 1
+     * @var string 报错时间
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $CvmCount;
+    public $ErrorTime;
 
     /**
-     * @param string $SpecName 1
+     * @var string 报错信息
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param DiskSpecPlus $DataDisk 1
+     */
+    public $ErrorMessage;
+
+    /**
+     * @param string $UserName 用户名称
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param integer $CvmCount 1
+     * @param string $Database 数据库
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $ErrorTime 报错时间
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $ErrorMessage 报错信息
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -74,17 +86,20 @@ class InstanceNodeGroup extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("SpecName",$param) and $param["SpecName"] !== null) {
-            $this->SpecName = $param["SpecName"];
+        if (array_key_exists("UserName",$param) and $param["UserName"] !== null) {
+            $this->UserName = $param["UserName"];
         }
 
-        if (array_key_exists("DataDisk",$param) and $param["DataDisk"] !== null) {
-            $this->DataDisk = new DiskSpecPlus();
-            $this->DataDisk->deserialize($param["DataDisk"]);
+        if (array_key_exists("Database",$param) and $param["Database"] !== null) {
+            $this->Database = $param["Database"];
         }
 
-        if (array_key_exists("CvmCount",$param) and $param["CvmCount"] !== null) {
-            $this->CvmCount = $param["CvmCount"];
+        if (array_key_exists("ErrorTime",$param) and $param["ErrorTime"] !== null) {
+            $this->ErrorTime = $param["ErrorTime"];
+        }
+
+        if (array_key_exists("ErrorMessage",$param) and $param["ErrorMessage"] !== null) {
+            $this->ErrorMessage = $param["ErrorMessage"];
         }
     }
 }

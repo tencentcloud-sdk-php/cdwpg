@@ -18,47 +18,35 @@ namespace TencentCloud\Cdwpg\V20201230\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 集群节点信息
+ * 访问信息
  *
- * @method string getSpecName() 获取1
+ * @method string getAddress() 获取地址
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setSpecName(string $SpecName) 设置1
+ * @method void setAddress(string $Address) 设置地址
 注意：此字段可能返回 null，表示取不到有效值。
- * @method DiskSpecPlus getDataDisk() 获取1
+ * @method string getProtocol() 获取协议
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setDataDisk(DiskSpecPlus $DataDisk) 设置1
-注意：此字段可能返回 null，表示取不到有效值。
- * @method integer getCvmCount() 获取1
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setCvmCount(integer $CvmCount) 设置1
+ * @method void setProtocol(string $Protocol) 设置协议
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class InstanceNodeGroup extends AbstractModel
+class AccessInfo extends AbstractModel
 {
     /**
-     * @var string 1
+     * @var string 地址
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $SpecName;
+    public $Address;
 
     /**
-     * @var DiskSpecPlus 1
+     * @var string 协议
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $DataDisk;
+    public $Protocol;
 
     /**
-     * @var integer 1
+     * @param string $Address 地址
 注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $CvmCount;
-
-    /**
-     * @param string $SpecName 1
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param DiskSpecPlus $DataDisk 1
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param integer $CvmCount 1
+     * @param string $Protocol 协议
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -74,17 +62,12 @@ class InstanceNodeGroup extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("SpecName",$param) and $param["SpecName"] !== null) {
-            $this->SpecName = $param["SpecName"];
+        if (array_key_exists("Address",$param) and $param["Address"] !== null) {
+            $this->Address = $param["Address"];
         }
 
-        if (array_key_exists("DataDisk",$param) and $param["DataDisk"] !== null) {
-            $this->DataDisk = new DiskSpecPlus();
-            $this->DataDisk->deserialize($param["DataDisk"]);
-        }
-
-        if (array_key_exists("CvmCount",$param) and $param["CvmCount"] !== null) {
-            $this->CvmCount = $param["CvmCount"];
+        if (array_key_exists("Protocol",$param) and $param["Protocol"] !== null) {
+            $this->Protocol = $param["Protocol"];
         }
     }
 }
